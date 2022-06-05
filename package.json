@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "node-cron": "^3.0.0",
+    "node-notifier": "^10.0.1",
+    "puppeteer": "^14.2.1"
+  },
+  "scripts": {
+    "app": "node -e 'require(\"./app.js\").run()'"
+  }
+}
