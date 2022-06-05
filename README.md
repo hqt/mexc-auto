@@ -1,3 +1,8 @@
+Install libraries
+```
+npm install
+```
+
 Manually run app
 ```
 npm run app
