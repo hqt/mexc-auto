@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "config": "^3.3.7",
     "node-cron": "^3.0.0",
     "node-notifier": "^10.0.1",
+    "properties": "^1.2.1",
     "puppeteer": "^14.2.1"
   },
   "scripts": {

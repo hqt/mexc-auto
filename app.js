@@ -63,8 +63,8 @@ async function run () {
   // get data
   await page.waitForSelector(".pages-contract-pairs-symbolInfo");
   
-  const names = await page.$$eval(".pages-contract-pairs-symbolInfo .pages-contract-pairs-col1", elements=> elements.map(item=>item.textContent));
-  const prices = await page.$$eval(".pages-contract-pairs-symbolInfo .pages-contract-pairs-col3", elements=> elements.map(item=>item.textContent));
+  const names = await page.$$eval(".pages-contract-pairs-symbolInfo .pages-contract-pairs-col1", elements => elements.map(item=>item.textContent));
+  const prices = await page.$$eval(".pages-contract-pairs-symbolInfo .pages-contract-pairs-col3", elements => elements.map(item=>item.textContent));
   console.log("total items: " + names.length);
 
   let coins = [];
