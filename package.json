@@ -7,6 +7,7 @@
     "puppeteer": "^14.2.1"
   },
   "scripts": {
-    "app": "node -e 'require(\"./app.js\").run()'"
+    "app": "node -e 'require(\"./app.js\").run()'",
+    "api": "node -e 'require(\"./api.js\").run()'"
   }
 }

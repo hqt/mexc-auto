@@ -34,7 +34,7 @@ async function run () {
   //   browserWSEndpoint: wsChromeEndpointurl,
   // });
 
-  const browser = await puppeteer.launch({headless: false,
+  const browser = await puppeteer.launch({headless: true,
     userDataDir: 'puppeteer_data',
     defaultViewport: null,
   });
@@ -56,9 +56,9 @@ async function run () {
   await page.waitForSelector(".pages-contract-pairs-pairList .pages-contract-pairs-col3");
   const sort = await page.$(".pages-contract-pairs-pairList .pages-contract-pairs-col3");
   await sort.click();
-  page.waitFor(500);
+  page.waitFor(1000);
   await sort.click();
-  page.waitFor(500);
+  page.waitFor(1000);
 
   // get data
   await page.waitForSelector(".pages-contract-pairs-symbolInfo");
@@ -76,12 +76,20 @@ async function run () {
   console.log(coins);
   
   let msg = `${coins[0].name} increased ${coins[0].changed}%`;
-  notifier.notify({
+  notifier.notify(
+    {
     title: 'Price Alert',
     message: msg,
     sound: true,
     wait: true
-  });
+    },
+    function (err, response, metadata) {
+      // console.log(err + "--" + response + "--" + metadata);
+      // Response is response from notification
+      // Metadata contains activationType, activationAt, deliveredAt
+    }
+  );
+  console.log("done");
 
   await page.screenshot({path: 'screenshot.png'});
   await browser.close();
