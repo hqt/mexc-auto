@@ -30,7 +30,7 @@ function run() {
     console.log("----------------");
     console.log(coins.slice(coins.length-15, coins.length));
 
-    let msg = `${coins[0].symbol} increased ${coins[0].changed}% - price: ${coins[0].price}`;
+    let msg = `${coins[0].symbol} increased ${coins[0].changed}% \nPrice: ${coins[0].price}`;
     notifier.notify(
       {
       title: 'Price Alert',
